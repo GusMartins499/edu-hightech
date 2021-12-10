@@ -13,7 +13,7 @@ class TeacherRepository implements ITeachersRepository {
 
   async listAll(): Promise<Teacher[]> {
     const teachers = this.repository.find({
-      select: ["name", "email", "bio", "techs"],
+      select: ["id", "name", "email", "bio", "techs"],
     });
 
     return teachers;
