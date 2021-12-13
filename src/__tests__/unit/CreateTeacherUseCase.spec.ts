@@ -6,7 +6,7 @@ import { CreateTeacherUseCase } from "@modules/teachers/useCases/createTeacher/C
 let createTeacherUseCase: CreateTeacherUseCase;
 let teachersRepositoryInMemory: TeachersRepositoryInMemory;
 
-describe("Create teacher", () => {
+describe("Create Teacher", () => {
   beforeEach(() => {
     teachersRepositoryInMemory = new TeachersRepositoryInMemory();
     createTeacherUseCase = new CreateTeacherUseCase(teachersRepositoryInMemory);
@@ -30,7 +30,7 @@ describe("Create teacher", () => {
     expect(isCreatedTeacher).toHaveProperty("id");
   });
 
-  it("Should not be able to create a new teacher with same email", async () => {
+  it("Should not be able to create a new teacher with same email", () => {
     expect(async () => {
       const teacher = {
         name: "Teacher Test",

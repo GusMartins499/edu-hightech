@@ -4,7 +4,7 @@ interface ICreateStudentDTO {
   password: string;
   bio: string;
   isDeficiency: boolean;
-  typeDeficiency: "visual" | "mobility" | "hearing" | "another";
+  typeDeficiency?: "visual" | "mobility" | "hearing" | "another" | null;
 }
 
 export { ICreateStudentDTO };

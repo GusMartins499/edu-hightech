@@ -35,7 +35,7 @@ describe("Authenticate Teacher", () => {
     expect(responseToken).toHaveProperty("token");
   });
 
-  it("Should be not be able to authenticate a non-existent teacher", async () => {
+  it("Should be not be able to authenticate a non-existent teacher", () => {
     expect(async () => {
       await authenticateTeacherUseCase.execute({
         email: "non-existent-teacher@gmail.com",
@@ -44,7 +44,7 @@ describe("Authenticate Teacher", () => {
     }).rejects.toBeInstanceOf(AppError);
   });
 
-  it("Should not be able to authenticate a teacher with invalid password", async () => {
+  it("Should not be able to authenticate a teacher with invalid password", () => {
     expect(async () => {
       const teacher: ICreateTeacherDTO = {
         name: "Teacher Test",
@@ -61,7 +61,7 @@ describe("Authenticate Teacher", () => {
     }).rejects.toBeInstanceOf(AppError);
   });
 
-  it("Should not be able to authenticate a teacher with invalid e-mail", async () => {
+  it("Should not be able to authenticate a teacher with invalid e-mail", () => {
     expect(async () => {
       const teacher: ICreateTeacherDTO = {
         name: "Teacher Test",

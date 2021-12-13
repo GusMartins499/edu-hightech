@@ -36,8 +36,12 @@ class CreateStudentUseCase {
       ) {
         throw new AppError("Incorrect typeDeficiency");
       }
-    } else if (typeDeficiency !== null) {
-      throw new AppError("Incorrect data");
+    }
+
+    if (!isDeficiency) {
+      if (typeDeficiency !== null) {
+        throw new AppError("Incorrect data");
+      }
     }
 
     const passwordHash = await hash(password, 8);
