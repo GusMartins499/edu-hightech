@@ -1,7 +1,8 @@
 import { inject, injectable } from "tsyringe";
 
+import { IStudentsRepository } from "@modules/students/repositories/IStudentsRepository";
+
 import { Student } from "../../entities/Student";
-import { IStudentsRepository } from "../../repositories/IStudentsRepository";
 
 @injectable()
 class ListAllStudentsUseCase {

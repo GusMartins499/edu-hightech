@@ -1,9 +1,10 @@
 import { hash } from "bcrypt";
 import { inject, injectable } from "tsyringe";
 
-import { AppError } from "../../../../erros/AppError";
+import { AppError } from "@erros/AppError";
+import { ITeachersRepository } from "@modules/teachers/repositories/ITeachersRepository";
+
 import { ICreateTeacherDTO } from "../../dtos/ICreateTeacherDTO";
-import { ITeachersRepository } from "../../repositories/ITeachersRepository";
 
 @injectable()
 class CreateTeacherUseCase {

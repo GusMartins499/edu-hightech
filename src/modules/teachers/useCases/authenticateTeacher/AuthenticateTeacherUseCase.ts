@@ -1,9 +1,10 @@
+import "dotenv/config";
 import { compare } from "bcrypt";
 import { sign } from "jsonwebtoken";
 import { inject, injectable } from "tsyringe";
 
-import { AppError } from "../../../../erros/AppError";
-import { ITeachersRepository } from "../../repositories/ITeachersRepository";
+import { AppError } from "@erros/AppError";
+import { ITeachersRepository } from "@modules/teachers/repositories/ITeachersRepository";
 
 interface IRequest {
   email: string;

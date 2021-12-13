@@ -1,8 +1,8 @@
 import { Router } from "express";
 
-import { AuthenticateTeacherController } from "../modules/teachers/useCases/authenticateTeacher/AuthenticateTeacherController";
-import { CreateTeacherController } from "../modules/teachers/useCases/createTeacher/CreateTeacherController";
-import { ListAllTeachersController } from "../modules/teachers/useCases/listAllTeachers/ListAllTeachersController";
+import { AuthenticateTeacherController } from "@modules/teachers/useCases/authenticateTeacher/AuthenticateTeacherController";
+import { CreateTeacherController } from "@modules/teachers/useCases/createTeacher/CreateTeacherController";
+import { ListAllTeachersController } from "@modules/teachers/useCases/listAllTeachers/ListAllTeachersController";
 
 const teachersRoutes = Router();
 const createTeacherController = new CreateTeacherController();

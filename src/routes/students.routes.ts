@@ -1,8 +1,8 @@
 import { Router } from "express";
 
-import { AuthenticateStudentController } from "../modules/students/useCases/authenticateStudent/AuthenticateStudentController";
-import { CreateStudentController } from "../modules/students/useCases/createStudent/CreateStudentController";
-import { ListAllStudentsController } from "../modules/students/useCases/listAllStudents/ListAllStudentsController";
+import { AuthenticateStudentController } from "@modules/students/useCases/authenticateStudent/AuthenticateStudentController";
+import { CreateStudentController } from "@modules/students/useCases/createStudent/CreateStudentController";
+import { ListAllStudentsController } from "@modules/students/useCases/listAllStudents/ListAllStudentsController";
 
 const studentsRoutes = Router();
 const createStudentController = new CreateStudentController();

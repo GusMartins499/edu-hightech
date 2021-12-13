@@ -1,7 +1,8 @@
 import { getRepository, Repository } from "typeorm";
 
+import { Student } from "@modules/students/entities/Student";
+
 import { ICreateStudentDTO } from "../../dtos/ICreateStudentDTO";
-import { Student } from "../../entities/Student";
 import { IStudentsRepository } from "../IStudentsRepository";
 
 class StudentsRepository implements IStudentsRepository {
