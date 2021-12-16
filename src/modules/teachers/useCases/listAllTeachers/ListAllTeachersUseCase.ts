@@ -1,8 +1,7 @@
 import { inject, injectable } from "tsyringe";
 
+import { Teacher } from "@modules/teachers/entities/Teacher";
 import { ITeachersRepository } from "@modules/teachers/repositories/ITeachersRepository";
-
-import { Teacher } from "../../entities/Teacher";
 
 @injectable()
 class ListAllTeachersUseCase {

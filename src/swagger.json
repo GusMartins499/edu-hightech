@@ -1,0 +1,408 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "EduHightech Documentation",
+    "description": "This is an API EduHightech",
+    "version": "1.0.0",
+    "contact": {
+      "email": "gustavosm994@gmail.com"
+    }
+  },
+  "paths": {
+    "/teacher": {
+      "post": {
+        "tags": [
+          "Teacher"
+        ],
+        "summary": "Create a teacher",
+        "description": "Create a new teacher",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "bio": {
+                    "type": "string"
+                  },
+                  "teachs": {
+                    "type": "string"
+                  }
+                },
+                "examplee": {
+                  "name": "New Teacher Example",
+                  "email": "teacher@example.com",
+                  "password": "1234",
+                  "bio": "I love being a teacher",
+                  "techs": "React, Javascript, HTML, CSS"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Teacher already exists"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Teacher"
+        ],
+        "summary": "List teachers",
+        "description": "A simple GET request to list all teachers",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string"
+                      },
+                      "bio": {
+                        "type": "string"
+                      },
+                      "techs": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/student": {
+      "post": {
+        "tags": [
+          "Student"
+        ],
+        "summary": "Create a student",
+        "description": "If the student has a deficiency you must define the type of them, only visual, mobility, hearing, or another. If the student does not have a deficiency, the propertie typeDeficiency must be null",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "bio": {
+                    "type": "string"
+                  },
+                  "isDeficiency": {
+                    "type": "boolean"
+                  },
+                  "typeDeficiency": {
+                    "type": "String"
+                  }
+                },
+                "example": [
+                  {
+                    "name": "New Student Example",
+                    "email": "studentOne@example.com",
+                    "password": "1",
+                    "bio": "I'am the student One",
+                    "isDeficiency": false,
+                    "typeDeficiency": null
+                  },
+                  {
+                    "name": "New Student Example",
+                    "email": "studentTwo@example.com",
+                    "password": "12",
+                    "bio": "I'am the student Two",
+                    "isDeficiency": true,
+                    "typeDeficiency": "visual"
+                  },
+                  {
+                    "name": "New Student Example",
+                    "email": "studentThree@example.com",
+                    "password": "123",
+                    "bio": "I'am the student Three",
+                    "isDeficiency": true,
+                    "typeDeficiency": "mobility"
+                  },
+                  {
+                    "name": "New Student Example",
+                    "email": "studentFour@example.com",
+                    "password": "1234",
+                    "bio": "I'am the student Four",
+                    "isDeficiency": true,
+                    "typeDeficiency": "hearing"
+                  },
+                  {
+                    "name": "New Student Example",
+                    "email": "studentFive@example.com",
+                    "password": "12345",
+                    "bio": "I'am the student Five",
+                    "isDeficiency": true,
+                    "typeDeficiency": "another"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Student"
+        ],
+        "summary": "List students",
+        "description": "A simple GET request to list all students",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string"
+                      },
+                      "isDeficiency": {
+                        "type": "string"
+                      },
+                      "typeDeficiency": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/classes": {
+      "post": {
+        "tags": [
+          "Classes"
+        ],
+        "summary": "Create a class",
+        "description": "Create a new class",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "teacher_id": {
+                    "type": "string"
+                  },
+                  "student_id": {
+                    "type": "string"
+                  }
+                },
+                "examplee": {
+                  "teacher_id": "1c9b7dbd-d7aa-49f2-9b3f-fde5d3a3fda7",
+                  "student_id": "842fb22f-ac46-404d-86ed-9c054a561bcc"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Classes"
+        ],
+        "summary": "List classes",
+        "description": "A simple GET request to list all classes",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "teacher": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "email": {
+                            "type": "string"
+                          },
+                          "password": {
+                            "type": "string"
+                          },
+                          "bio": {
+                            "type": "string"
+                          },
+                          "techs": {
+                            "type": "string"
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "format": "date-time"
+                          }
+                        }
+                      },
+                      "student": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "email": {
+                            "type": "string"
+                          },
+                          "password": {
+                            "type": "string"
+                          },
+                          "bio": {
+                            "type": "string"
+                          },
+                          "isDeficiency": {
+                            "type": "boolean"
+                          },
+                          "typeDeficiency": {
+                            "type": "string"
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "format": "date-time"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/teacher/auth": {
+        "post": {
+          "tags": [
+            "Session"
+          ],
+          "summary": "Authentication teacher",
+          "description": "Authentication teacher",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "email": {
+                      "type": "string"
+                    },
+                    "password": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "Email or password incorrect!"
+            }
+          }
+        }
+      },
+      "/student/auth": {
+        "post": {
+          "tags": [
+            "Session"
+          ],
+          "summary": "Authentication student",
+          "description": "Authentication student",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "email": {
+                      "type": "string"
+                    },
+                    "password": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "Email or password incorrect!"
+            }
+          }
+        }
+      }
+    }
+  }
+}

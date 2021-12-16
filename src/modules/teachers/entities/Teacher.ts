@@ -1,5 +1,14 @@
-import { Entity, Column, CreateDateColumn, PrimaryColumn } from "typeorm";
+import {
+  Entity,
+  Column,
+  CreateDateColumn,
+  PrimaryColumn,
+  JoinColumn,
+  OneToOne,
+} from "typeorm";
 import { v4 } from "uuid";
+
+import { Classes } from "@modules/classes/entities/Classes";
 
 @Entity("teachers")
 class Teacher {
@@ -23,6 +32,10 @@ class Teacher {
 
   @CreateDateColumn()
   created_at: Date;
+
+  @OneToOne(() => Classes)
+  @JoinColumn({ name: "class_id" })
+  class: Classes;
 
   constructor() {
     if (!this.id) {
