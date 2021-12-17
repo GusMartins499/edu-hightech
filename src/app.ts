@@ -18,6 +18,11 @@ const app = express();
 app.use(express.json());
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
+app.use("/", (request, response) => {
+  return response.json({
+    message: "API running successfully",
+  });
+});
 
 app.use(cors());
 
