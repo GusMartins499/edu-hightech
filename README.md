@@ -8,7 +8,7 @@
 </p>
 
 <h1 align="center">
-    <img alt="EduHightech" title="#EduHightech" src="./web/src/assets/edu-hightech.png" />
+    <img alt="EduHightech" title="#EduHightech" src="./src/assets/edu-hightech.png" />
 </h1>
 
 <h4 align="center"> 
