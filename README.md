@@ -97,7 +97,11 @@ $ yarn dev
 # O servidor inciará na porta:3333 - acesse http://localhost:3333 
 
 ```
-### botao insomnia
+### 🔥 EndPoints
+
+Importe todas as rotas da aplicação no insomnia
+
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Edu-Hightech&uri=https%3A%2F%2Fraw.githubusercontent.com%2FGusMartins499%2Fedu-hightech%2Fmaster%2FInsomnia_2021-12-17.json)
 
 ---
 
